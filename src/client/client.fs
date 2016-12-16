@@ -3,7 +3,7 @@ open System
 open Fable.Core
 open Fable.Import
 module R = Fable.Helpers.React
-module P = Fable.Helpers.React.Props
+open R.Props
 
 Node.require.Invoke("core-js") |> ignore
 Node.require.Invoke("bootstrap/dist/css/bootstrap.css") |> ignore
