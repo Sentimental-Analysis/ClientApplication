@@ -41,10 +41,13 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="../../node_modules/fable-core/Fable.Core.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="node_modules/fable-core/Fable.Core.dll" />
+    <Reference Include="node_modules/fable-powerpack/Fable.PowerPack.dll" />
+    <Reference Include="node_modules/fable-react/Fable.React.dll" />
     <Compile Include="client.fs" />
-    <None Include="Script.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">14</MinimumVisualStudioVersion>

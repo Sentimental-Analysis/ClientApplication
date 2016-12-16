@@ -1177,24 +1177,6 @@ fable-core@^0.7.15:
   version "0.7.15"
   resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.7.15.tgz#1b16a95970838197b181015446007efb99510f91"
 
-fable-import-d3@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/fable-import-d3/-/fable-import-d3-0.0.4.tgz#1e286b7c35e9f4b13d7a932e4ff6c1c98bbb1f7c"
-
-fable-import-fetch@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/fable-import-fetch/-/fable-import-fetch-0.2.4.tgz#4d60d8ff6805aef2783206be65c806c9e86237d5"
-
-fable-import-mocha@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/fable-import-mocha/-/fable-import-mocha-0.0.3.tgz#7491fe3ddf0df8da1fdcd22203a5dc311e30cae8"
-
-fable-import-react@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/fable-import-react/-/fable-import-react-0.5.2.tgz#8c88745c10d6593fa4e5358626d6ab21794dc875"
-  dependencies:
-    react ">= 15.0.0"
-
 fable-log@~1.0.1:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/fable-log/-/fable-log-1.0.7.tgz#cf86a944ca05d289fb13b153040afaae23ba61dc"
@@ -1211,6 +1193,14 @@ fable-log@~1.0.1:
 fable-plugins-nunit@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/fable-plugins-nunit/-/fable-plugins-nunit-0.7.2.tgz#f5f10997898668c2f67582d4eca91b1523d96a31"
+
+fable-powerpack@0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/fable-powerpack/-/fable-powerpack-0.0.19.tgz#9349aab7d01958bf6936a76fefee06e1a7424294"
+
+fable-react@^0.7.14:
+  version "0.7.14"
+  resolved "https://registry.yarnpkg.com/fable-react/-/fable-react-0.7.14.tgz#b8b676721d7db073e83df2a405966536d9fc8018"
 
 fable-settings@~1.0.1:
   version "1.0.1"
@@ -2474,7 +2464,7 @@ react-prop-types@^0.4.0:
   dependencies:
     warning "^3.0.0"
 
-"react@>= 15.0.0", react@^15.4.1:
+react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
   dependencies:
