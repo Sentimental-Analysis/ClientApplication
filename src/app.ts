@@ -2,6 +2,7 @@ import { Stream } from 'xstream';
 import { div, label, input, hr, h1, makeDOMDriver, VNode } from "@cycle/dom";
 import { DOMSource } from "@cycle/dom/xstream-typings";
 import { run } from "@cycle/xstream-run";
+import debounce from 'xstream/extra/debounce';
 import * as tslib from "tslib";
 
 interface ISources {
