@@ -3,7 +3,6 @@ import { div, label, input, hr, h1, makeDOMDriver, VNode } from "@cycle/dom";
 import { DOMSource } from "@cycle/dom/xstream-typings";
 import { run } from "@cycle/xstream-run";
 import * as tslib from "tslib";
-import devounce from "xstream/index/debounce";
 
 interface ISources {
     dom: DOMSource;
@@ -15,9 +14,6 @@ interface ISinks {
 
 function main(sources: ISources): ISinks {
     const dom = sources.dom;
-
-    const searchRequest = dom.select(".field").events("input").compose()
-
     const sinks: ISinks = {
         dom: dom.select(".field").events("input")
             .map((ev: Event) => (ev.target as HTMLInputElement).value)
