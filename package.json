@@ -8,6 +8,7 @@
     "type": "git"
   },
   "scripts": {
+    "compile": "webpack",
     "dev": "concurrently \"webpack --watch\" \"lite-server\"",
     "start": "npm run dev"
   },

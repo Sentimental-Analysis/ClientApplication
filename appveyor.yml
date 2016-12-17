@@ -19,7 +19,7 @@ test_script:
   - node --version
   - npm --version
   # run tests
-  - npm test
+  - npm run compile
 
 # Don't actually build.
 build: off
