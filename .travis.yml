@@ -6,5 +6,8 @@ node_js:
 sudo: true
 before_script:
 - npm install
+- npm install -g webpack
+- npm install -g typescript
+- npm install -g typings
 script:
 - npm run compile
