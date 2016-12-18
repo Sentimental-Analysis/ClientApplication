@@ -13,7 +13,6 @@ import { PortalUrl } from "../data/consts";
 import {List} from 'immutable';
 
 function searchBox(source: HTTPSource) {
-    const a = List.of([1,2,3]).map(x =>x )
     return source
         .select("sentiment")
         .flatten()
