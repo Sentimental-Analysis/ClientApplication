@@ -1,6 +1,6 @@
 import { opinionToWord } from '../utils/opinios';
 import { h1, p } from '@cycle/dom/lib';
-import { Result, Score, Sentiment } from '../data/score';
+import { KeyWord, Result, Score, Sentiment } from '../data/score';
 import { Response } from '@cycle/http/lib/interfaces';
 import { HTTPSource } from '@cycle/http/lib';
 import Cycle from '@cycle/xstream-run';
@@ -10,8 +10,10 @@ import { div, label, input, hr, ul, li, a, makeDOMDriver } from '@cycle/dom';
 import { makeHTTPDriver } from '@cycle/http';
 import { DOMSource } from "@cycle/dom/xstream-typings";
 import { PortalUrl } from "../data/consts";
+import {List} from 'immutable';
 
 function searchBox(source: HTTPSource) {
+    const a = List.of([1,2,3]).map(x =>x )
     return source
         .select("sentiment")
         .flatten()
@@ -26,12 +28,12 @@ function searchBox(source: HTTPSource) {
                 input('.field', { attrs: { type: 'text' } }),
                 hr(),
                 !result.isSuccess ? null : div([
-                    h1(`Opinia to ${opinionToWord(result.value.sentiment)}`),
+                    h1(`Opinia dla klucza ${result.value.key} to ${opinionToWord(result.value.sentiment)}`),
                     h1(`Ilość negatywnych opini to: ${result.value.negativeTweetsQuantity}`),
                     h1(`Ilość pozytywnych opini to: ${result.value.positiveTweetsQuantity}`),
-                    ul('.keywords', result.value.keyWords.map(keyword =>
+                    ul('.keywords', List.of(...result.value.keyWords).take(10).map(keyword =>
                         li('.keyword', [
-                            p(keyword)
+                            p(`${keyword.key} | ${keyword.quantity}`)
                         ])
                     ))
                 ])
