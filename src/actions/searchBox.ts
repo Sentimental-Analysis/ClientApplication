@@ -1,5 +1,5 @@
 import { opinionToWord } from '../utils/opinios';
-import { h1 } from '@cycle/dom/lib';
+import { h1, p } from '@cycle/dom/lib';
 import { Result, Score, Sentiment } from '../data/score';
 import { Response } from '@cycle/http/lib/interfaces';
 import { HTTPSource } from '@cycle/http/lib';
@@ -25,11 +25,16 @@ function searchBox(source: HTTPSource) {
                 label(".label", "Search"),
                 input('.field', { attrs: { type: 'text' } }),
                 hr(),
-                !result.isSuccess ? null: div([
+                !result.isSuccess ? null : div([
                     h1(`Opinia to ${opinionToWord(result.value.sentiment)}`),
-                    h1(`Ilość negatywnych opini to: to ${opinionToWord(result.value.negativeTweetsQuantity)}`),
-                    h1(`Opinia to ${opinionToWord(result.value.positiveTweetsQuantity)}`)
-                ], { attrs: { type: 'text' } })
+                    h1(`Ilość negatywnych opini to: ${result.value.negativeTweetsQuantity}`),
+                    h1(`Ilość pozytywnych opini to: ${result.value.positiveTweetsQuantity}`),
+                    ul('.keywords', result.value.keyWords.map(keyword =>
+                        li('.keyword', [
+                            p(keyword)
+                        ])
+                    ))
+                ])
             ])
         );
 }
