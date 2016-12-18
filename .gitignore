@@ -250,6 +250,7 @@ ModelManifest.xml
 /test_build
 config.json
 
+src/**/*.js
 paket-files
 logs/*
 !.gitkeep
@@ -258,13 +259,9 @@ bower_components/
 tmp
 .DS_Store
 .idea
-js/
+dist/
+typings/
 bundle.js
 bundle.js.map
-dist/
-out/
-*.woff2
-*.svg
-*.ttf
-*.eot
-*.woff
+karma_html/
+coverage/

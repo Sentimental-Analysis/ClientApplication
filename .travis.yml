@@ -1,9 +1,13 @@
-language: csharp
+
+language: node_js
+node_js:
+- "6.9.2"
+- "7.2.1"
 sudo: true
 before_script:
-- nvm install 7.2.1
-- nvm use 7.2.1
-- npm install -g fable-compiler
 - npm install
+- npm install -g webpack
+- npm install -g typescript
+- npm install -g typings
 script:
-- fable
+- npm run compile

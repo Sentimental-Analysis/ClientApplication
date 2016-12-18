@@ -1,0 +1,1 @@
+export const PortalUrl = "http://localhost:5000";
