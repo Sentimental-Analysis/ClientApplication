@@ -13,6 +13,7 @@ function search(source: DOMSource) {
             .compose(debounce(500))
             .filter(query => (query as any).length)
             .map(q => ({
-                url: `${PortalUrl}/Tweets/`
-            }))
+                url: `${PortalUrl}/api/Tweet/${encodeURI(q as any)}`,
+                category: 'sentiment'
+            }));
 }
