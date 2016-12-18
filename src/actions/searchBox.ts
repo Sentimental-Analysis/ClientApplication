@@ -35,7 +35,7 @@ function searchBox(source: HTTPSource) {
                         li('.keyword', [
                             p(`${keyword.key} | ${keyword.quantity}`)
                         ])
-                    ))
+                    ).toArray())
                 ])
             ])
         );
