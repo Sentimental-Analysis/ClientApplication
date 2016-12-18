@@ -8,7 +8,7 @@ import {PortalUrl} from "../data/consts";
 
 function search(source: DOMSource) {
     return source
-            .select('.field')
+            .select('.tweet')
             .events('input')
             .compose(debounce(500))
             .map(ev => (ev.target as any).value)
