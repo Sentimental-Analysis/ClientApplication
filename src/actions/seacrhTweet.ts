@@ -8,12 +8,15 @@ import {PortalUrl} from "../data/consts";
 
 function search(source: DOMSource) {
     return source
-            .select(".select")
-            .events("input")
+            .select('.field')
+            .events('input')
             .compose(debounce(500))
-            .filter(query => (query as any).length)
+            .map(ev => (ev.target as any).value)
+            .filter(query => (query as any).length > 0)
             .map(q => ({
                 url: `${PortalUrl}/api/Tweet/${encodeURI(q as any)}`,
                 category: 'sentiment'
             }));
 }
+
+export default search;
