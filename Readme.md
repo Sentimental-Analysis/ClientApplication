@@ -1,7 +1,7 @@
 |    CI    |      Status   |
 |----------|:-------------:|
 | AppVeyor(Windows): | [![Build status](https://ci.appveyor.com/api/projects/status/288g7qvfkcrfj9t1?svg=true)](https://ci.appveyor.com/project/dominikus1993/client)|
-| CircleCi(Linux): |[![CircleCI](https://circleci.com/gh/Sentimental-Analysis/Client.svg?style=svg)](https://circleci.com/gh/Sentimental-Analysis/Client)|
+| Travis(Linux): |[![Build status](https://ci.appveyor.com/api/projects/status/r4m8rrbs776wtvp4/branch/master?svg=true)](https://ci.appveyor.com/project/dominikus1993/clientapplication/branch/master)|
 
 ## How To Run
 1. npm install -g webpack
