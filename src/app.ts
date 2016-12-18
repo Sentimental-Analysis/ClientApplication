@@ -1,5 +1,5 @@
 import search from './actions/seacrhTweet';
-import searchBox from './actions/searchBox';
+import searchBox from './views/searchBox';
 import { source } from '@cycle/dom/lib';
 import { ISinks, ISources } from './data/global';
 import { HTTPSource, makeHTTPDriver } from '@cycle/http/lib';

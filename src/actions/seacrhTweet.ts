@@ -7,6 +7,7 @@ import { DOMSource } from "@cycle/dom/xstream-typings";
 import {PortalUrl} from "../data/consts";
 
 function search(source: DOMSource) {
+    const a = Rx.Obser
     return source
             .select('.field')
             .events('input')
