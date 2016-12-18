@@ -7,11 +7,17 @@ export const enum Sentiment {
     Positive
 }
 
+export interface KeyWord {
+    readonly key: string;
+    readonly quantity: number;
+}
+
 export interface Score {
-    readonly keyWords: string[];
+    readonly keyWords: KeyWord[];
     readonly negativeTweetsQuantity: number;
     readonly positiveTweetsQuantity: number;
     readonly sentiment: Sentiment;
+    readonly key: string;
 }
 
 export interface Result<T> {
