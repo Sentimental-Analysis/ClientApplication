@@ -1,10 +1,9 @@
-import { opinionToWord } from "../utils/opinios";
-import { h1, p, span } from "@cycle/dom/lib";
+import { span } from "@cycle/dom/lib";
 import {  Result, Score, Sentiment } from "../data/score";
 import { Response } from "@cycle/http/lib/interfaces";
 import { HTTPSource } from "@cycle/http/lib";
-import { div, input, hr, ul, li } from "@cycle/dom";
-import { List } from "immutable";
+import { div, input, hr} from "@cycle/dom";
+import renderResultBox from "./resultBox";
 
 function searchBox(source: HTTPSource) {
     return source
@@ -28,16 +27,7 @@ function searchBox(source: HTTPSource) {
                     ])
                 ]),
                 hr(),
-                !result.isSuccess ? null : div([
-                    h1(`Opinia dla klucza ${result.value.key} to ${opinionToWord(result.value.sentiment)}`),
-                    h1(`Ilość negatywnych opini to: ${result.value.negativeTweetsQuantity}`),
-                    h1(`Ilość pozytywnych opini to: ${result.value.positiveTweetsQuantity}`),
-                    ul(".keywords", List.of(...result.value.keyWords).take(10).map(keyword =>
-                        li(".keyword", [
-                            p(`${keyword.key} | ${keyword.quantity}`)
-                        ])
-                    ).toArray())
-                ])
+                !result.isSuccess ? null : renderResultBox(result.value)
             ])
         );
 }

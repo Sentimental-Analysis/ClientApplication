@@ -1,0 +1,24 @@
+{
+  "sessions": [
+    {
+      "id": "70aed5bb-8e65-4a9a-a530-33ce2e628a52",
+      "tabLayout": {
+        "type": "stack",
+        "width": 100,
+        "height": 100,
+        "tabs": [
+          {
+            "id": "b8290af8-2f6e-4912-807c-d184c074b691",
+            "relativeUrl": "file://./src/views/searchBox.ts",
+            "additionalData": null
+          }
+        ],
+        "subItems": [],
+        "activeItemIndex": 0
+      },
+      "lastUsed": 1482158771019,
+      "selectedTabId": "b8290af8-2f6e-4912-807c-d184c074b691"
+    }
+  ],
+  "relativePathToTsconfig": "./tsconfig.json"
+}
