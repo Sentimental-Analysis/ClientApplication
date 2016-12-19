@@ -14,9 +14,10 @@ function main(sources: ISources): ISinks {
     const actions = intent(dom);
     const state = model(actions, sources.http);
     const vdom = view(state);
+
     return {
-        dom: actions.searchTweet,
-        http: vdom,
+        dom: vdom,
+        http: actions.searchTweet,
     };
 }
 

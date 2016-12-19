@@ -1,14 +1,14 @@
-import { Result, Score } from "../data/score";
+import { AppState, Result, Score } from "../data/score";
 import { div, hr } from "@cycle/dom/lib";
 import inputField from "./inputField";
 import renderResultBox from "./resultBox";
 
 function view(state: any) {
-    return state.map((result: Result<Score>) =>
+    return state.map((appState: AppState) =>
         div(".container", [
             inputField(),
             hr(),
-            !result.isSuccess ? null : renderResultBox(result.value),
+            renderResultBox(appState),
         ]),
     );
 }
