@@ -7,6 +7,6 @@ import search from "./seacrhTweet";
 
 function intent(dom: DOMSource){
     return {
-        searchTwweet: search
+        searchTweet: search(dom)
     }
 }

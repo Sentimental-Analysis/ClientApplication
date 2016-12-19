@@ -12,3 +12,7 @@ export interface ISinks {
     dom: Stream<VNode>;
     http: Stream<RequestOptions>;
 }
+
+export interface Actions {
+    searchTweet: Stream<RequestOptions>;
+}
