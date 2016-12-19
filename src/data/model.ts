@@ -4,9 +4,9 @@ import { Result, Score, Sentiment } from "./score";
 import { EMPTY_RESULT, LOADING } from "./consts";
 
 function model(actions: Actions, http: HTTPSource): any {
-  return http.select("sentiment")
+  return http
+    .select("sentiment")
     .flatten()
-    .merge(actions.queryChange.filter((query: any) => query.length === 0).map(EMPTY_RESULT))
     .map((res: Response) => {
       const body = res.body as Result<Score>;
       if (body.isSuccess) {
@@ -14,7 +14,7 @@ function model(actions: Actions, http: HTTPSource): any {
       }
       return EMPTY_RESULT;
     })
-    .startWith(EMPTY_RESULT);
+    .startWith(LOADING);
 }
 
 export default model;
