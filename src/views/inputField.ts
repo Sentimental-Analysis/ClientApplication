@@ -1,6 +1,6 @@
 import { div, input, span } from "@cycle/dom/lib";
 
-function inputField() {
+function renderInputField() {
     return div(".row", [
         div(".col-lg-12.nopadding", [
             div(".input-group.input-group-lg", [
@@ -13,4 +13,4 @@ function inputField() {
     ]);
 };
 
-export default inputField;
+export default renderInputField;
