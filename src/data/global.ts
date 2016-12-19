@@ -14,5 +14,6 @@ export interface ISinks {
 }
 
 export interface Actions {
-    searchTweet: Stream<RequestOptions>;
+  searchTweet: Stream<RequestOptions>;
+  queryChange: any;
 }

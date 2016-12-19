@@ -1,13 +1,25 @@
-import {DOMSource} from "@cycle/dom";
-import search from "./seacrhTweet";
-/**
- * Created by dominik.kotecki on 19-12-2016.
- */
+import { PortalUrl } from "../data/consts";
+import debounce from "xstream/extra/debounce";
+import { DOMSource } from "@cycle/dom";
 
 
-function intent(dom: DOMSource){
+function intent(dom: DOMSource) {
+    const inputChanged = dom
+        .select(".tweet")
+        .events("input")
+        .compose(debounce(500))
+        .map((ev: Event) => (ev.target as any).value);
+
+    const searchTweet = inputChanged
+        .filter((query: any) => (query as any).length > 0)
+        .map((q: any) => ({
+            category: "sentiment",
+            url: `${PortalUrl}/api/Tweet/${encodeURI(q)}`,
+        }));
+
     return {
-        searchTweet: search(dom)
+        searchTweet,
+        queryChanged: inputChanged,
     }
 }
 

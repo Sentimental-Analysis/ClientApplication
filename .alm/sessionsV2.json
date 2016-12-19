@@ -11,13 +11,23 @@
             "id": "b8290af8-2f6e-4912-807c-d184c074b691",
             "relativeUrl": "file://./src/views/searchBox.ts",
             "additionalData": null
+          },
+          {
+            "id": "877d1926-0aa1-463c-9e1b-ae196a2f5346",
+            "relativeUrl": "file://./src/data/model.ts",
+            "additionalData": null
+          },
+          {
+            "id": "3783215f-988b-429b-8814-7319500b3f82",
+            "relativeUrl": "file://./src/data/global.ts",
+            "additionalData": null
           }
         ],
         "subItems": [],
         "activeItemIndex": 0
       },
-      "lastUsed": 1482158944767,
-      "selectedTabId": "b8290af8-2f6e-4912-807c-d184c074b691"
+      "lastUsed": 1482174584159,
+      "selectedTabId": "3783215f-988b-429b-8814-7319500b3f82"
     }
   ],
   "relativePathToTsconfig": "./tsconfig.json"
