@@ -9,7 +9,10 @@ function model(actions: Actions, http: HTTPSource): any {
     .merge(actions.queryChange.filter((query: any) => query.length === 0).map(EMPTY_RESULT))
     .map((res: Response) => {
       const body = res.body as Result<Score>;
-      return body;
+      if (body.isSuccess) {
+        return body;
+      }
+      return EMPTY_RESULT;
     })
     .startWith(EMPTY_RESULT);
 }

@@ -1,4 +1,3 @@
-import search from "./actions/seacrhTweet";
 import searchBox from "./views/searchBox";
 import { source } from "@cycle/dom/lib";
 import { ISinks, ISources } from "./data/global";
@@ -15,7 +14,7 @@ function main(sources: ISources): ISinks {
 
     return {
         dom: searchBox(http),
-        http: search(dom),
+        http: null,
     };
 }
 
