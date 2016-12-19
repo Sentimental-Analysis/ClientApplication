@@ -1,6 +1,11 @@
 
 export type Nullable<T> = T | null;
 
+export interface AppState{
+    result: Result<Score>;
+    message: string;
+}
+
 export const enum Sentiment {
     Negative,
     Neutral,
