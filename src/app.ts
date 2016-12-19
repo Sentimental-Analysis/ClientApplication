@@ -1,4 +1,5 @@
-import searchBox from "./views/searchBox";
+import view from "./views/view";
+import model from "./data/model";
 import { source } from "@cycle/dom/lib";
 import { ISinks, ISources } from "./data/global";
 import { HTTPSource, makeHTTPDriver } from "@cycle/http/lib";
@@ -11,10 +12,11 @@ function main(sources: ISources): ISinks {
     const dom = sources.dom;
     const http = sources.http;
     const actions = intent(dom);
-
+    const state = model(actions, sources.http);
+    const vdom = view(state);
     return {
-        dom: searchBox(http),
-        http: null,
+        dom: actions.searchTweet,
+        http: vdom,
     };
 }
 

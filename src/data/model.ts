@@ -9,7 +9,7 @@ function model(actions: Actions, http: HTTPSource): any {
     .flatten()
     .map((res: Response) => {
       const body = res.body as Result<Score>;
-      if (body.isSuccess) {
+      if (body && body.isSuccess) {
         return body;
       }
       return EMPTY_RESULT;

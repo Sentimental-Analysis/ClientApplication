@@ -21,7 +21,7 @@ function intent(dom: DOMSource): Actions {
     return {
         searchTweet,
         queryChange: inputChanged,
-    }
+    };
 }
 
 export default intent;
