@@ -6,10 +6,13 @@ import { HTTPSource, makeHTTPDriver } from "@cycle/http/lib";
 import { div, label, input, hr, h1, makeDOMDriver, VNode } from "@cycle/dom";
 import { run } from "@cycle/xstream-run";
 import * as tslib from "tslib";
+import intent from "./actions/intent";
 
 function main(sources: ISources): ISinks {
     const dom = sources.dom;
     const http = sources.http;
+    const actions = intent(dom);
+
     return {
         dom: searchBox(http),
         http: search(dom),

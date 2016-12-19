@@ -10,3 +10,5 @@ function intent(dom: DOMSource){
         searchTweet: search(dom)
     }
 }
+
+export default intent;
