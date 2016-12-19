@@ -18,5 +18,5 @@ function main(sources: ISources): ISinks {
 
 run(main, {
     dom: makeDOMDriver("#app"),
-    http: makeHTTPDriver()
+    http: makeHTTPDriver(),
 });

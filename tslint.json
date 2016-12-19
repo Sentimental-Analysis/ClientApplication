@@ -5,6 +5,9 @@
         "max-line-length": [true, 140],
         "no-string-literal": false,
         "only-arrow-functions": false,
+        "ordered-imports": [
+            false
+        ],
         "member-ordering": [true,
             "public-before-private",
             "static-before-instance",
