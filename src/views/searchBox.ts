@@ -1,8 +1,8 @@
 import { span } from "@cycle/dom/lib";
-import {  Result, Score, Sentiment } from "../data/score";
+import { Result, Score, Sentiment } from "../data/score";
+import { div,  hr, input} from "@cycle/dom";
 import { Response } from "@cycle/http/lib/interfaces";
 import { HTTPSource } from "@cycle/http/lib";
-import { div, input, hr} from "@cycle/dom";
 import renderResultBox from "./resultBox";
 
 function searchBox(source: HTTPSource) {
@@ -13,7 +13,16 @@ function searchBox(source: HTTPSource) {
             const body = res.body as Result<Score>;
             return body;
         })
-        .startWith({ isSuccess: false, messages: [], value: { keyWords: [], negativeTweetsQuantity: 0, positiveTweetsQuantity: 0, sentiment: Sentiment.Neutral } } as Result<Score>)
+        .startWith({
+            isSuccess: false,
+            messages: [],
+            value: {
+                keyWords: [],
+                negativeTweetsQuantity: 0,
+                positiveTweetsQuantity: 0,
+                sentiment: Sentiment.Neutral,
+            },
+        } as Result<Score>)
         .map((result: Result<Score>) =>
             div(".container", [
                 div(".row", [
@@ -21,15 +30,15 @@ function searchBox(source: HTTPSource) {
                         div(".input-group.input-group-lg", [
                             input("#tweet .tweet.input-lg.form-control", { attrs: { type: "text" } }),
                             span(".input-group-btn", [
-                                input(".tweet .btn.btn-default.btn-lg", { attrs: { type: "submit" } })
-                            ])
-                        ])
-                    ])
+                                input(".tweet .btn.btn-default.btn-lg", { attrs: { type: "submit" } }),
+                            ]),
+                        ]),
+                    ]),
                 ]),
                 hr(),
-                !result.isSuccess ? null : renderResultBox(result.value)
-            ])
-        );
+                !result.isSuccess ? null : renderResultBox(result.value),
+            ]),
+    );
 }
 
 export default searchBox;
