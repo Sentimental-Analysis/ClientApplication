@@ -1,9 +1,10 @@
+import { Actions } from "../data/global";
 import { PortalUrl } from "../data/consts";
 import debounce from "xstream/extra/debounce";
 import { DOMSource } from "@cycle/dom";
 
 
-function intent(dom: DOMSource) {
+function intent(dom: DOMSource): Actions {
     const inputChanged = dom
         .select(".tweet")
         .events("input")
@@ -19,7 +20,7 @@ function intent(dom: DOMSource) {
 
     return {
         searchTweet,
-        queryChanged: inputChanged,
+        queryChange: inputChanged,
     }
 }
 
