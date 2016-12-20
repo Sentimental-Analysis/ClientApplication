@@ -1,7 +1,7 @@
 
 export type Nullable<T> = T | null;
 
-export interface AppState{
+export interface AppState {
     result: Result<Score>;
     message: string;
 }
@@ -9,7 +9,12 @@ export interface AppState{
 export const enum Sentiment {
     Negative,
     Neutral,
-    Positive
+    Positive,
+}
+
+export interface Localization {
+    readonly latitude: number;
+    readonly longitude: number;
 }
 
 export interface KeyWord {
@@ -22,6 +27,7 @@ export interface Score {
     readonly negativeTweetsQuantity: number;
     readonly positiveTweetsQuantity: number;
     readonly sentiment: Sentiment;
+    readonly localizations: Localization[];
     readonly key: string;
 }
 
