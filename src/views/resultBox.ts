@@ -10,8 +10,11 @@ function renderResultBox({message, result}: AppState) {
     if (result.isSuccess) {
         const score = result.value;
         return div([
-            renderOpinionBox(score),
-            renderKeyWordBox(score.keyWords),
+            h1(".text", `${score.key.toUpperCase()}`),
+            div([
+                renderOpinionBox(score),
+                renderKeyWordBox(score.keyWords),
+            ]),
         ]);
     }
     return h1(message);

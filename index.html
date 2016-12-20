@@ -12,6 +12,10 @@
     .score {
         width: 100%;
     }
+    
+    .scoreBox {
+        min-height: 100px;
+    }
 
     .text {
         text-align: center;
@@ -21,6 +25,18 @@
         padding: 0 !important;
         margin: 0 !important;
     }
+
+    .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
     </style>
 </head>
 

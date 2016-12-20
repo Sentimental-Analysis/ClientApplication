@@ -1,7 +1,10 @@
-import { h2 } from "@cycle/dom/lib";
+import { div, h1, h2 } from '@cycle/dom/lib';
 
 function renderOpinionCountBox(opinion: "pozytywnych" | "negatywnych", quantity: number) {
-    return h2(`Ilość ${opinion} opinii: ${quantity}`);
+    return div([
+        h1(`Ilość ${opinion}:`),
+        h1(`${quantity}`),
+    ]);
 }
 
 export default renderOpinionCountBox;
