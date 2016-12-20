@@ -5,7 +5,39 @@
     <meta charset="utf-8" />
     <title>Twitter Sentiment</title>
     <meta name="description" content="Twitter Sentiment" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .score {
+        width: 100%;
+    }
+    
+    .scoreBox {
+        min-height: 100px;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .nopadding {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+    </style>
 </head>
 
 <body>
