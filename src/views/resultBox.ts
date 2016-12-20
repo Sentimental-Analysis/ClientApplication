@@ -1,3 +1,4 @@
+import renderKeyWordBox from "./keywordsBox";
 import renderOpinionBox from "./opinionBox";
 import { opinionToWord } from "../utils/opinios";
 import { h1, p } from "@cycle/dom/lib";
@@ -10,13 +11,7 @@ function renderResultBox({message, result}: AppState) {
         const score = result.value;
         return div([
             renderOpinionBox(score),
-            h1(`Ilość negatywnych opini to: ${score.negativeTweetsQuantity}`),
-            h1(`Ilość pozytywnych opini to: ${score.positiveTweetsQuantity}`),
-            ul(".keywords", List.of(...score.keyWords).take(10).map((keyword: KeyWord) =>
-                li(".keyword", [
-                    p(`${keyword.key} | ${keyword.quantity}`),
-                ]),
-            ).toArray()),
+            renderKeyWordBox(score.keyWords),
         ]);
     }
     return h1(message);
