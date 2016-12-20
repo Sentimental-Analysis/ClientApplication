@@ -1,11 +1,14 @@
-import { Sentiment } from '../data/score';
-export function opinionToWord(sent: Sentiment) : "Neutralny" | "Pozytwyny" | "Negatywny" {
+import { Sentiment } from "../data/score";
+
+export function opinionToWord(sent: Sentiment): "Neutralny" | "Pozytywny" | "Negatywny" {
     switch(sent){
         case Sentiment.Neutral:
             return "Neutralny";
         case Sentiment.Negative:
             return "Negatywny";
         case Sentiment.Positive:
-            return "Pozytwyny";
+            return "Pozytywny";
+        default:
+            return "Neutralny";
     }
 }

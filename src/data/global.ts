@@ -1,5 +1,5 @@
-import { HTTPSource, RequestOptions, ResponseStream } from '@cycle/http/lib';
-import { Stream } from 'xstream';
+import { HTTPSource, RequestOptions, ResponseStream } from "@cycle/http/lib";
+import { Stream } from "xstream";
 import { VNode } from "@cycle/dom";
 import { DOMSource } from "@cycle/dom/xstream-typings";
 
@@ -10,5 +10,10 @@ export interface ISources {
 
 export interface ISinks {
     dom: Stream<VNode>;
-    http: Stream<RequestOptions>
+    http: Stream<RequestOptions>;
+}
+
+export interface Actions {
+  searchTweet: Stream<RequestOptions>;
+  queryChange: any;
 }
