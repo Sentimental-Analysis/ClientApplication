@@ -32,3 +32,20 @@ export interface LeafletZoomEvent {
   zoom: number;
   center: Object;
 }
+
+
+function isValidLocalizationsArray(array: number[]) {
+    return array.filter((x: number) => isValid(x)).length === 0;
+}
+
+function isInValidLocalizationsArray(arr: number[]): boolean {
+  return !isValidLocalizationsArray(arr);
+}
+
+function isInvalid(num: number): boolean {
+  return !Number.isInteger(num) && !num;
+}
+
+function isValid(num: number): boolean {
+  return !isInvalid(num);
+}
